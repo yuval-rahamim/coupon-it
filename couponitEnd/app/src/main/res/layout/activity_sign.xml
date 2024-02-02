@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignInUpActivity"
+    android:background="#A6EBFF">
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Logo"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="email. exemple -y@gmail.com"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/login"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="password. at least 6 chars "
+        android:inputType="textPassword"
+        android:minHeight="48dp" />
+
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/login"
+        android:layout_toLeftOf="@id/register"
+        android:layout_toRightOf="@id/login"
+        android:text="stay in"
+        android:textSize="12dp" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_alignStart="@id/password"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#59E3F4"
+        android:onClick="signin"
+        android:text="log in" />
+
+    <Button
+        android:id="@+id/guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/login"
+        android:backgroundTint="#5997F4"
+        android:onClick="guest"
+        android:text="guest"
+        app:cornerRadius="20dp" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_toRightOf="@id/guest"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#59E3F4"
+        android:onClick="signup"
+        android:text="register" />
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageButton
+        android:id="@+id/mutebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:onClick="mute"
+        app:srcCompat="@android:drawable/ic_lock_silent_mode" />
+
+    <ImageView
+        android:id="@+id/brightimage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/Logo"
+        app:srcCompat="@drawable/brightness" />
+
+    <Button
+        android:id="@+id/brightbutton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/brightimage"
+        android:layout_alignRight="@id/brightimage"
+        android:backgroundTint="@color/teal_200"
+        android:text="בהירות אוטומטית"
+        android:textSize="10dp"
+        android:onClick="autoBright"/>
+
+</RelativeLayout>

@@ -1,0 +1,260 @@
+@startuml
+
+title __COUPON's Class Diagram__\n
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.AlarmReceiver {
+        + onReceive()
+    }
+  }
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.AlarmService {
+        {static} - CHANNEL_ID : String
+        {static} - NOTIFICATION_ID : int
+        + onBind()
+        + onStartCommand()
+        - showNotification()
+    }
+  }
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.BackgroundMusicService {
+        - mediaPlayer : MediaPlayer
+        + onBind()
+        + onCreate()
+        + onDestroy()
+        + onStartCommand()
+    }
+  }
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.Coupon {
+        ~ ExpiryDate : String
+        {static} ~ allid : int
+        ~ couponname : String
+        ~ coupontext : String
+        ~ doucomentName : String
+        ~ haveImage : boolean
+        ~ id : int
+        + Coupon()
+        + Coupon()
+        + Coupon()
+        + Coupon()
+        + getCalender()
+        + getCouponname()
+        + getCoupontext()
+        + getExpiryDay()
+        + getExpiryMonth()
+        + getExpiryYear()
+        + getId()
+        + getIdStr()
+    }
+  }
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.CouponPhoto {
+        {static} ~ allid : int
+        ~ doucomentName : String
+        ~ id : int
+        ~ imageView : ImageView
+        ~ imagestring : String
+        + CouponPhoto()
+        + CouponPhoto()
+        + getId()
+        + getIdStr()
+        + getImageviewBitMap()
+    }
+  }
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.CouponTypeActivity {
+        + back()
+        + open_photo()
+        + open_text()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.CouponsListsActivity {
+        {static} ~ MainCoupons : ArrayList<Coupon>
+        {static} ~ MainCouponsPhoto : ArrayList<CouponPhoto>
+        ~ PhotolistView : ListView
+        ~ alarmManager : AlarmManager
+        ~ couponid : int
+        ~ couponname : String
+        ~ coupontext : String
+        ~ db : FirebaseFirestore
+        ~ grouptext : String
+        ~ intenteditPhoto : Intent
+        ~ intenteditText : Intent
+        ~ listView : ListView
+        ~ sp : SharedPreferences
+        + SortCouponList()
+        + SortCouponPhotoList()
+        + add()
+        + back()
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        # onCreate()
+        ~ showCustomDialog()
+        - cancelAlarm()
+        - setAlarm()
+    }
+  }
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.CustomAdapterP {
+        ~ context : Context
+        ~ couponsP : ArrayList<CouponPhoto>
+        ~ inflter : LayoutInflater
+        + CustomAdapterP()
+        + clearData()
+        + getCount()
+        + getItem()
+        + getItemId()
+        + getView()
+    }
+  }
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.CustomAdapterT {
+        ~ context : Context
+        ~ coupons : ArrayList<Coupon>
+        ~ inflter : LayoutInflater
+        + CustomAdapterT()
+        + clearData()
+        + getCount()
+        + getItem()
+        + getItemId()
+        + getView()
+    }
+  }
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.PhotoActivity {
+        ~ bitmap : Bitmap
+        ~ couponname : EditText
+        {static} ~ date : Button
+        {static} ~ datestring : String
+        ~ imageView : ImageView
+        ~ intent : Intent
+        + ResizeImage()
+        + add()
+        + delete()
+        + showDatePickerDialog()
+        + takeFromGallery()
+        + takePhoto()
+        # onActivityResult()
+        # onCreate()
+        - GetImageToString()
+    }
+  }
+  
+
+
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.SignInUpActivity {
+        ~ checkBox : CheckBox
+        ~ db : FirebaseFirestore
+        ~ email : String
+        ~ intent : Intent
+        ~ light : Sensor
+        ~ listener : SensorEventListener
+        ~ login : Button
+        ~ mute : ImageButton
+        ~ pass : String
+        ~ password : EditText
+        ~ progressbar : ProgressBar
+        ~ register : Button
+        ~ sm : SensorManager
+        ~ sp : SharedPreferences
+        ~ useremail : EditText
+        - isBrightnessSensorActive : boolean
+        - mAuth : FirebaseAuth
+        + autoBright()
+        {static} + getSHA512SecurePassword()
+        + guest()
+        + mute()
+        + signin()
+        + signup()
+        # onCreate()
+        ~ isEmpty()
+        - createNotificationChannel()
+        - isMyServiceRunning()
+    }
+  }
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.TextActivity {
+        ~ already : boolean
+        ~ back : ImageButton
+        ~ coupon : Coupon
+        ~ couponname : EditText
+        ~ coupontext : EditText
+        {static} ~ date : Button
+        {static} ~ datestring : String
+        ~ del : Button
+        ~ intent : Intent
+        + add()
+        + back()
+        + delete()
+        + showDatePickerDialog()
+        # onCreate()
+    }
+  }
+  
+
+
+  
+
+  namespace com.yuval.coupon {
+    class com.yuval.coupon.activity_list_view {
+        # onCreate()
+    }
+  }
+  
+
+  com.yuval.coupon.AlarmReceiver -up-|> android.content.BroadcastReceiver
+  com.yuval.coupon.AlarmService -up-|> android.app.Service
+  com.yuval.coupon.BackgroundMusicService -up-|> android.app.Service
+  com.yuval.coupon.Coupon .up.|> java.io.Serializable
+  com.yuval.coupon.CouponPhoto .up.|> java.io.Serializable
+  com.yuval.coupon.CouponTypeActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.yuval.coupon.CouponsListsActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.yuval.coupon.CustomAdapterP -up-|> android.widget.BaseAdapter
+  com.yuval.coupon.CustomAdapterT -up-|> android.widget.BaseAdapter
+  com.yuval.coupon.PhotoActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.yuval.coupon.PhotoActivity o-- com.yuval.coupon.CouponPhoto : couponPhoto
+  com.yuval.coupon.PhotoActivity +-down- com.yuval.coupon.PhotoActivity.DatePickerFragment
+  com.yuval.coupon.PhotoActivity.DatePickerFragment .up.|> android.app.DatePickerDialog.OnDateSetListener
+  com.yuval.coupon.PhotoActivity.DatePickerFragment -up-|> androidx.fragment.app.DialogFragment
+  com.yuval.coupon.SignInUpActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.yuval.coupon.TextActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.yuval.coupon.TextActivity +-down- com.yuval.coupon.TextActivity.DatePickerFragment
+  com.yuval.coupon.TextActivity.DatePickerFragment .up.|> android.app.DatePickerDialog.OnDateSetListener
+  com.yuval.coupon.TextActivity.DatePickerFragment -up-|> androidx.fragment.app.DialogFragment
+  com.yuval.coupon.activity_list_view -up-|> androidx.appcompat.app.AppCompatActivity
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhotoActivity">
+
+
+
+    <Button
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginStart="20dp"
+        android:layout_toRightOf="@id/button6"
+        android:backgroundTint="#9403A9F4"
+        android:onClick="showDatePickerDialog"
+        android:text="Expiry Date "
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/couponname"
+        android:layout_width="209dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="36dp"
+        android:background="#2AB8FBEB"
+        android:ems="10"
+        android:hint="coupon name"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button"
+        android:layout_marginStart="20dp"
+        android:layout_toRightOf="@+id/button"
+        android:backgroundTint="#FF0000"
+        android:onClick="delete"
+        android:text="delete"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button6"
+        android:layout_marginTop="10dp"
+        android:onClick="add"
+        android:text="add" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:backgroundTint="@color/purple_200"
+        android:onClick="takePhoto"
+        android:text="takePhoto" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="1dp"
+        android:layout_toRightOf="@id/date"
+        android:backgroundTint="@color/purple_200"
+        android:onClick="takeFromGallery"
+        android:text="from gallery" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="112dp"
+        android:background="@color/purple_200" />
+
+</RelativeLayout>

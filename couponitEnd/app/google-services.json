@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "643029590956",
+    "project_id": "coupon-app-9e81e",
+    "storage_bucket": "coupon-app-9e81e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643029590956:android:a718801fb778b89b549009",
+        "android_client_info": {
+          "package_name": "com.yuval.coupon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643029590956-o4oouv2vlvc9psd21m9ofecocbg9sgis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-xTKNJdtbAi7zBRjI8lmXZBIsB1FBHYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643029590956-o4oouv2vlvc9psd21m9ofecocbg9sgis.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

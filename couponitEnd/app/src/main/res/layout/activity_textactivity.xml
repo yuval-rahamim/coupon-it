@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TextActivity">
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="355dp"
+        android:layout_marginTop="672dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="19dp"
+        android:onClick="back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <EditText
+        android:id="@+id/couponname"
+        android:layout_width="209dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="36dp"
+        android:background="#2AB8FBEB"
+        android:ems="10"
+        android:hint="coupon name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/coupontext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/couponname"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:background="#4DE7B8FB"
+        android:ems="10"
+        android:gravity="end|top"
+        android:hint="text- enter the coupon"
+        android:inputType="textMultiLine"
+        android:lines="20"
+        android:maxLines="22"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="664dp"
+        android:layout_marginBottom="19dp"
+        android:onClick="add"
+        android:text="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coupontext"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/purple_200"
+        android:onClick="showDatePickerDialog"
+        android:text="Expiry Date (תאריך תפוגה  )"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/delete"
+        android:textColor="@color/black"
+        android:backgroundTint="#FF0000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button"
+        android:layout_marginStart="20dp"
+        android:layout_toRightOf="@+id/button"
+        android:onClick="delete"
+        android:visibility="gone"
+        android:text="delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</RelativeLayout>
